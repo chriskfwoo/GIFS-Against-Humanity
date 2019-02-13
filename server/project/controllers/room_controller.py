@@ -12,7 +12,7 @@ def create_unique_room_id():
     global UNIQUE_ROOMS
 
     while True:
-        N = 5
+        N = 4
         id = ''.join(random.choices(
             string.ascii_uppercase + string.digits, k=N))
         if id not in UNIQUE_ROOMS:
@@ -87,6 +87,7 @@ def room_user_turns(room):
 
 def user_select_gif(room, user, gif):
     global ROOMS_STORE
+
     ROOMS_STORE[room]['gifPicks'][user] = gif
     return ROOMS_STORE[room]
 
