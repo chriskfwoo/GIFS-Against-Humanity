@@ -13,6 +13,10 @@ socketio = SocketIO()
 
 
 def create_app(script_info=None):
+    """
+    Flask Application Factory Pattern
+    :return: instance of a flask app
+    """
 
     app = Flask(__name__)
     CORS(app)
@@ -20,7 +24,7 @@ def create_app(script_info=None):
     setup_logging(app)
     setup_questions()
 
-    # setup extensions
+    # intialize extensions
     socketio.init_app(app)
 
     return app

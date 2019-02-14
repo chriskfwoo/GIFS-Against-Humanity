@@ -38,7 +38,7 @@ def join_room():
         return jsonify({'error': 'cannot post', 'selectedGif': ''})
 
 
-@api_bp.route('/room/select', methods=["POST"])
+@api_bp.route('/room/hand/select', methods=["POST"])
 def user_select():
     try:
         response = request.json

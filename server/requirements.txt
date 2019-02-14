@@ -7,3 +7,5 @@ gunicorn==19.9.0
 requests==2.20.1
 flake8==3.7.5
 autopep8==1.4.3
+Flask-Testing==0.6.2
+gevent-socketio==0.3.6

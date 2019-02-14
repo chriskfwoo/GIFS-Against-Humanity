@@ -14,7 +14,7 @@ class RoomScreen extends React.PureComponent {
   state = {
     id: "",
     name: "",
-    socket: socketIOClient("http://127.0.0.1:5000/"),
+    socket: socketIOClient('http://'+document.domain+':5000/'),
     redirect: false,
     listOfUsers: [],
     hand: [],
@@ -64,7 +64,7 @@ class RoomScreen extends React.PureComponent {
       }).then(result => {
         if (result.value) {
           axios
-            .post("http://localhost:5000/api/room/hand/new", {
+            .post('http://'+document.domain+':5000/api/room/hand/new', {
               room: id,
               user: name,
               gif: this.state.userPick
@@ -104,7 +104,7 @@ class RoomScreen extends React.PureComponent {
 
   postRequest(id, name) {
     axios
-      .post("http://localhost:5000/api/room/join", {
+      .post('http://'+document.domain+':5000/api/room/join', {
         room: id,
         user: name
       })
@@ -136,7 +136,7 @@ class RoomScreen extends React.PureComponent {
   selectOption(gif) {
     const { id, name } = this.state;
     axios
-      .post("http://localhost:5000/api/room/select", {
+      .post('http://'+document.domain+':5000/api/room/hand/select', {
         room: id,
         user: name,
         gif: gif
