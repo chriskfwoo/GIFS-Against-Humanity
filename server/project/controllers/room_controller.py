@@ -108,6 +108,7 @@ def create_room(room, user):
 
     gifs_available = giphy_api()
 
+    # TODO: sending this data across all clients, needs improvement, only send client wants needed
     ROOMS_STORE[room] = {
         'question': '',
         'captain': user,
